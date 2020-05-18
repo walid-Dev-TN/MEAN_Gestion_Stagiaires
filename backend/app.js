@@ -8,7 +8,8 @@ let express = require('express'),
 // Connecting mongoDB
 mongoose.Promise = global.Promise;
 mongoose.connect(dataBaseConfig.db, {
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  useFindAndModify: false
 }).then(() => {
     console.log('Database connected sucessfully ')
   },
