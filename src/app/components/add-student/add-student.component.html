@@ -1,6 +1,6 @@
 <!-- Title group  -->
 <div class="title-group">
-  <h1 class="mat-h1">Add Student</h1>
+  <h1 class="mat-h1">Ajouter Stagiaire</h1>
   <mat-divider fxFlex="1 0"></mat-divider>
 </div>
 
@@ -12,29 +12,29 @@
       <div class="controlers-wrapper">
         <!-- Name -->
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Student name" formControlName="student_name">
+          <input matInput placeholder="Nom et prénom" formControlName="student_name">
           <mat-error *ngIf="handleError('student_name', 'required')">
-            You must provide a<strong>student name</strong>
+            Vous devez saisir <strong> le nom et prénom du stagiaire</strong>
           </mat-error>
         </mat-form-field>
 
         <!-- Email -->
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Student email" formControlName="student_email">
+          <input matInput placeholder="Email" formControlName="student_email">
           <mat-error *ngIf="handleError('student_email', 'required')">
-            You must provide a<strong>student email</strong>
+            Vous devez saisir <strong>L'email du stagiaire</strong>
           </mat-error>
         </mat-form-field>
 
         <!-- Section -->
         <mat-form-field>
-          <mat-label>Section</mat-label>
+          <mat-label>Type du stage</mat-label>
           <mat-select [(value)]="selected" formControlName="section">
             <mat-option [value]="sectioinArray" *ngFor="let sectioinArray of SectioinArray">{{sectioinArray}}
             </mat-option>
           </mat-select>
           <mat-error *ngIf="handleError('section', 'required')">
-            Section is required
+            Type du stage est une information obligatoire
           </mat-error>
         </mat-form-field>
       </div>
@@ -51,32 +51,32 @@
               {{subjectArray.name}}
               <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
             </mat-chip>
-            <input placeholder="Add subject" [matChipInputFor]="chipList"
+            <input placeholder="Ajouter Sujet/Taches" [matChipInputFor]="chipList"
               [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
               (matChipInputTokenEnd)="add($event)">
           </mat-chip-list>
-          <i class="material-icons tooltip-info" matTooltip="Enter subject name and press enter to add subjects">
+          <i class="material-icons tooltip-info" matTooltip="saisir un sujet/tache et tapez Entrer">
             info
           </i>
         </mat-form-field>
 
         <!-- Date of birth -->
         <mat-form-field>
-          <input matInput readonly [matDatepicker]="picker" placeholder="Date of birth" formControlName="dob"
+          <input matInput readonly [matDatepicker]="picker" placeholder="Date de naissance" formControlName="dob"
             (dateChange)="formatDate($event)">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
           <mat-error *ngIf="handleError('dob', 'required')">
-            Date of birth is required
+            Date de naissance est obligatoire
           </mat-error>
         </mat-form-field>
 
         <!-- Gender -->
         <div class="misc-bottom-padding">
-          <mat-label>Gender:</mat-label>
+          <mat-label>Genre:</mat-label>
           <mat-radio-group aria-label="Select an option" formControlName="gender">
-            <mat-radio-button value="Male">Male</mat-radio-button>
-            <mat-radio-button value="Female">Female</mat-radio-button>
+            <mat-radio-button value="Male">Homme</mat-radio-button>
+            <mat-radio-button value="Female">Femme</mat-radio-button>
           </mat-radio-group>
         </div>
       </div>
