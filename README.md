@@ -1,12 +1,11 @@
-# Angular8MeanstackAngularMaterial
+# Mean stack: Gestion des stagiaires
 
-Step by step article on [Angular 8/9/10 MEAN Stack Tutorial – Build CRUD App with Angular Material 8](https://www.positronx.io/angular-8-mean-stack-tutorial-build-crud-angular-material/)
 
 
 ## Start MEAN Stack App
 Start Angular app & install required dependencies
 
-- git clone https://github.com/SinghDigamber/Angular8MeanstackAngularMaterial.git
+- git clone https://github.com/walid-Dev-TN/MEAN_Gestion_Stagiaires
 - Run `npm install` from the root of the project
 - run `ng serve --open` to start angular 
 
